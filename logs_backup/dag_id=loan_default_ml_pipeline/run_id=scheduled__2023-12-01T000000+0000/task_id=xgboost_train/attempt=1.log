@@ -1,0 +1,39 @@
+[2025-06-21T09:57:20.022+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:57:20.123+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_train scheduled__2023-12-01T00:00:00+00:00 [queued]>
+[2025-06-21T09:57:20.139+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_train scheduled__2023-12-01T00:00:00+00:00 [queued]>
+[2025-06-21T09:57:20.140+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-06-21T09:57:20.166+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): xgboost_train> on 2023-12-01 00:00:00+00:00
+[2025-06-21T09:57:20.180+0000] {standard_task_runner.py:57} INFO - Started process 2565 to run task
+[2025-06-21T09:57:20.186+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'xgboost_train', 'scheduled__2023-12-01T00:00:00+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp4g_c7zo8']
+[2025-06-21T09:57:20.189+0000] {standard_task_runner.py:85} INFO - Job 68: Subtask xgboost_train
+[2025-06-21T09:57:20.214+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:57:20.263+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.xgboost_train scheduled__2023-12-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T09:57:20.278+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:57:20.783+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='xgboost_train' AIRFLOW_CTX_EXECUTION_DATE='2023-12-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-12-01T00:00:00+00:00'
+[2025-06-21T09:57:20.888+0000] {logging_mixin.py:149} INFO - [DEBUG] execution_date: 2023-12-01
+[2025-06-21T09:57:20.889+0000] {logging_mixin.py:149} INFO - [INFO] Loading training parts from /opt/airflow/datamart/gold/training_features...
+[2025-06-21T09:57:21.224+0000] {logging_mixin.py:149} INFO - [INFO] Combined training data shape: (5958, 20)
+[2025-06-21T09:57:21.236+0000] {logging_mixin.py:149} INFO - [INFO] Starting Optuna hyperparameter tuning...
+[2025-06-21T09:57:39.133+0000] {logging_mixin.py:149} INFO - [INFO] Final F1 Score: 0.5737
+[2025-06-21T09:57:39.369+0000] {logging_mixin.py:149} WARNING - 2025/06/21 09:57:39 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-06-21T09:57:45.137+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/_distutils_hack/__init__.py:33 UserWarning: Setuptools is replacing distutils.
+[2025-06-21T09:57:45.411+0000] {logging_mixin.py:149} INFO - [INFO] Training complete and artifacts saved for xgboost @ 2023_12_01
+[2025-06-21T09:57:45.412+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-06-21T09:57:45.429+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=xgboost_train, execution_date=20231201T000000, start_date=20250621T095720, end_date=20250621T095745
+[2025-06-21T09:57:45.514+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T09:57:45.542+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

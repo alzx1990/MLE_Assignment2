@@ -1,0 +1,18 @@
+[2025-06-21T10:41:22.724+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:22.824+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_infer_gate scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:41:22.838+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_infer_gate scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:41:22.839+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 3
+[2025-06-21T10:41:22.868+0000] {taskinstance.py:1327} INFO - Executing <Task(ShortCircuitOperator): xgboost_infer_gate> on 2023-01-01 00:00:00+00:00
+[2025-06-21T10:41:22.885+0000] {standard_task_runner.py:57} INFO - Started process 6734 to run task
+[2025-06-21T10:41:22.891+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'xgboost_infer_gate', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '146', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpau50ds8h']
+[2025-06-21T10:41:22.893+0000] {standard_task_runner.py:85} INFO - Job 146: Subtask xgboost_infer_gate
+[2025-06-21T10:41:22.914+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:22.956+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.xgboost_infer_gate scheduled__2023-01-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T10:41:22.969+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:23.460+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='xgboost_infer_gate' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2025-06-21T10:41:23.469+0000] {python.py:183} INFO - Done. Returned value was: True
+[2025-06-21T10:41:23.470+0000] {python.py:253} INFO - Condition result is True
+[2025-06-21T10:41:23.471+0000] {python.py:256} INFO - Proceeding with downstream tasks...
+[2025-06-21T10:41:23.498+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=xgboost_infer_gate, execution_date=20230101T000000, start_date=20250621T104122, end_date=20250621T104123
+[2025-06-21T10:41:23.547+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T10:41:23.605+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check

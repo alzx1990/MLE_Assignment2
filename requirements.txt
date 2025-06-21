@@ -1,0 +1,29 @@
+# Core libraries
+numpy
+pandas
+scikit-learn
+scipy
+matplotlib
+seaborn
+
+# ML & Experiment Tracking
+xgboost
+mlflow
+joblib
+optuna
+shap
+
+# Parquet Support
+pyarrow
+fastparquet
+
+# Spark support
+pyspark
+
+# Airflow
+psutil
+
+# UI / Dashboard
+streamlit
+altair
+plotly

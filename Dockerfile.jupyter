@@ -1,0 +1,31 @@
+# Use a standard Python image
+FROM python:3.10-slim-buster
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies that might be needed by Python packages (e.g., for pandas, numpy, etc.)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        libpq-dev \
+        git \
+        curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy requirements.txt and install Python dependencies
+# This includes jupyterlab and all ML-related libraries.
+COPY requirements.txt .
+RUN pip install --no-cache-dir jupyterlab && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Expose Jupyter Lab port
+EXPOSE 8888
+
+# Command to start Jupyter Labdocker-compose build jupyter
+# Added --NotebookApp.token='' and --NotebookApp.password='' to disable authentication for direct access.
+CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--allow-root", "--ip=0.0.0.0", "--NotebookApp.token=''", "--NotebookApp.password=''"]

@@ -1,0 +1,19 @@
+[2025-06-21T10:41:43.883+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:43.989+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.logistic_regression_infer scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:41:44.006+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.logistic_regression_infer scheduled__2023-01-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:41:44.007+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-06-21T10:41:44.034+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): logistic_regression_infer> on 2023-01-01 00:00:00+00:00
+[2025-06-21T10:41:44.083+0000] {standard_task_runner.py:57} INFO - Started process 6791 to run task
+[2025-06-21T10:41:44.090+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'logistic_regression_infer', 'scheduled__2023-01-01T00:00:00+00:00', '--job-id', '148', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpor2by8es']
+[2025-06-21T10:41:44.093+0000] {standard_task_runner.py:85} INFO - Job 148: Subtask logistic_regression_infer
+[2025-06-21T10:41:44.114+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:44.156+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.logistic_regression_infer scheduled__2023-01-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T10:41:44.169+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:41:44.649+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='logistic_regression_infer' AIRFLOW_CTX_EXECUTION_DATE='2023-01-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-01T00:00:00+00:00'
+[2025-06-21T10:41:44.900+0000] {logging_mixin.py:149} INFO - [INFO] Snapshot prediction saved to: /opt/airflow/datamart/gold/scoring/model_predictions_logistic_regression_2023_01_01.parquet
+[2025-06-21T10:41:44.917+0000] {logging_mixin.py:149} INFO - [INFO] Daily predictions saved to: /opt/airflow/datamart/gold/predictions/predictions_2023_01_01.parquet
+[2025-06-21T10:41:44.964+0000] {logging_mixin.py:149} INFO - [INFO] Updated prediction table saved to: /opt/airflow/datamart/gold/predictions/predictions_table.parquet
+[2025-06-21T10:41:44.965+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-06-21T10:41:44.974+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=logistic_regression_infer, execution_date=20230101T000000, start_date=20250621T104143, end_date=20250621T104144
+[2025-06-21T10:41:45.025+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T10:41:45.071+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check

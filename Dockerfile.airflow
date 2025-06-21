@@ -1,0 +1,44 @@
+# Use the official Apache Airflow image with Python 3.7
+FROM apache/airflow:2.6.1
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Java (if required)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends openjdk-17-jdk-headless procps bash && \
+    rm -rf /var/lib/apt/lists/* && \
+    # Ensure Spark’s scripts run with bash instead of dash
+    ln -sf /bin/bash /bin/sh && \
+    mkdir -p /usr/lib/jvm/java-17-openjdk-amd64/bin && \
+    if [ ! -e /usr/lib/jvm/java-17-openjdk-amd64/bin/java ]; then \
+        ln -s "$(which java)" /usr/lib/jvm/java-17-openjdk-amd64/bin/java; \
+    fi
+
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$PATH:$JAVA_HOME/bin
+
+# Airflow's default working directory inside the container
+WORKDIR /opt/airflow 
+
+# Copy and install Python dependencies from requirements.txt
+COPY requirements.txt .
+
+USER airflow
+# RUN python3.9 -m pip install --no-cache-dir -r requirements.txt # Explicitly use python3.9 for pip install
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your DAGs, plugins, and scripts into the appropriate Airflow directories
+# Volumes will override these at runtime, but this is good for base image creation
+COPY --chown=airflow:airflow ./dags /opt/airflow/dags
+COPY --chown=airflow:airflow ./plugins /opt/airflow/plugins
+COPY --chown=airflow:airflow ./scripts /opt/airflow/scripts
+
+VOLUME /app
+
+# Expose Airflow Webserver port for completeness (docker-compose will handle actual port mapping)
+EXPOSE 8080
+
+# Default command for the Airflow image (will be overridden by docker-compose services)
+CMD ["airflow", "webserver"]

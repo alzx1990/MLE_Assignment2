@@ -1,0 +1,17 @@
+[2025-06-21T10:51:25.280+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:51:25.382+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.prepare_training_data scheduled__2023-03-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:51:25.398+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.prepare_training_data scheduled__2023-03-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:51:25.399+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 3
+[2025-06-21T10:51:25.426+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): prepare_training_data> on 2023-03-01 00:00:00+00:00
+[2025-06-21T10:51:25.442+0000] {standard_task_runner.py:57} INFO - Started process 7905 to run task
+[2025-06-21T10:51:25.449+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'prepare_training_data', 'scheduled__2023-03-01T00:00:00+00:00', '--job-id', '166', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpm6sohlyd']
+[2025-06-21T10:51:25.452+0000] {standard_task_runner.py:85} INFO - Job 166: Subtask prepare_training_data
+[2025-06-21T10:51:25.478+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:51:25.525+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.prepare_training_data scheduled__2023-03-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T10:51:25.539+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:51:26.025+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='prepare_training_data' AIRFLOW_CTX_EXECUTION_DATE='2023-03-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-03-01T00:00:00+00:00'
+[2025-06-21T10:51:26.393+0000] {logging_mixin.py:149} INFO - [INFO] Saved training part: /opt/airflow/datamart/gold/training_features/training_features_2023_03_01.parquet ((506, 20))
+[2025-06-21T10:51:26.394+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-06-21T10:51:26.404+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=prepare_training_data, execution_date=20230301T000000, start_date=20250621T105125, end_date=20250621T105126
+[2025-06-21T10:51:26.467+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T10:51:26.516+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check

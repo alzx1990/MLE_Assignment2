@@ -1,0 +1,497 @@
+[2025-06-21T10:22:17.751+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:22:17.851+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_monitor scheduled__2024-06-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:22:17.867+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.xgboost_monitor scheduled__2024-06-01T00:00:00+00:00 [queued]>
+[2025-06-21T10:22:17.868+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-06-21T10:22:17.897+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): xgboost_monitor> on 2024-06-01 00:00:00+00:00
+[2025-06-21T10:22:17.912+0000] {standard_task_runner.py:57} INFO - Started process 5862 to run task
+[2025-06-21T10:22:17.918+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'xgboost_monitor', 'scheduled__2024-06-01T00:00:00+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpk4p4zl3t']
+[2025-06-21T10:22:17.921+0000] {standard_task_runner.py:85} INFO - Job 137: Subtask xgboost_monitor
+[2025-06-21T10:22:17.944+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:22:17.987+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.xgboost_monitor scheduled__2024-06-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T10:22:18.001+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T10:22:18.486+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='xgboost_monitor' AIRFLOW_CTX_EXECUTION_DATE='2024-06-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-01T00:00:00+00:00'
+[2025-06-21T10:22:18.511+0000] {logging_mixin.py:149} INFO - [INFO] Loading model, schema, features, predictions, and labels...
+[2025-06-21T10:22:18.789+0000] {logging_mixin.py:149} INFO - [INFO] Computing SHAP values...
+[2025-06-21T10:22:28.866+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   8%|7         | 39/498 [00:00<?, ?it/s]
+[2025-06-21T10:22:28.990+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   8%|8         | 41/498 [00:10<00:28, 16.31it/s]
+[2025-06-21T10:22:29.234+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   9%|8         | 43/498 [00:10<00:44, 10.30it/s]
+[2025-06-21T10:22:29.486+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   9%|9         | 45/498 [00:10<00:49,  9.08it/s]
+[2025-06-21T10:22:29.616+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   9%|9         | 46/498 [00:10<00:52,  8.69it/s]
+[2025-06-21T10:22:29.745+0000] {logging_mixin.py:149} WARNING - Permutation explainer:   9%|9         | 47/498 [00:10<00:53,  8.42it/s]
+[2025-06-21T10:22:29.869+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  10%|9         | 48/498 [00:11<00:54,  8.32it/s]
+[2025-06-21T10:22:29.995+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  10%|9         | 49/498 [00:11<00:54,  8.21it/s]
+[2025-06-21T10:22:30.138+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  10%|#         | 50/498 [00:11<00:57,  7.82it/s]
+[2025-06-21T10:22:30.291+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  10%|#         | 51/498 [00:11<01:00,  7.40it/s]
+[2025-06-21T10:22:30.425+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  10%|#         | 52/498 [00:11<01:00,  7.43it/s]
+[2025-06-21T10:22:30.551+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  11%|#         | 53/498 [00:11<00:58,  7.57it/s]
+[2025-06-21T10:22:30.679+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  11%|#         | 54/498 [00:11<00:58,  7.64it/s]
+[2025-06-21T10:22:30.809+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  11%|#1        | 55/498 [00:12<00:57,  7.65it/s]
+[2025-06-21T10:22:30.938+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  11%|#1        | 56/498 [00:12<00:57,  7.68it/s]
+[2025-06-21T10:22:31.064+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  11%|#1        | 57/498 [00:12<00:56,  7.76it/s]
+[2025-06-21T10:22:31.199+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  12%|#1        | 58/498 [00:12<00:57,  7.65it/s]
+[2025-06-21T10:22:31.325+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  12%|#1        | 59/498 [00:12<00:56,  7.73it/s]
+[2025-06-21T10:22:31.456+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  12%|#2        | 60/498 [00:12<00:56,  7.70it/s]
+[2025-06-21T10:22:31.584+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  12%|#2        | 61/498 [00:12<00:56,  7.74it/s]
+[2025-06-21T10:22:31.708+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  12%|#2        | 62/498 [00:12<00:55,  7.83it/s]
+[2025-06-21T10:22:31.832+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  13%|#2        | 63/498 [00:13<00:55,  7.89it/s]
+[2025-06-21T10:22:31.955+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  13%|#2        | 64/498 [00:13<00:54,  7.97it/s]
+[2025-06-21T10:22:32.082+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  13%|#3        | 65/498 [00:13<00:54,  7.94it/s]
+[2025-06-21T10:22:32.207+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  13%|#3        | 66/498 [00:13<00:54,  7.95it/s]
+[2025-06-21T10:22:32.334+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  13%|#3        | 67/498 [00:13<00:54,  7.94it/s]
+[2025-06-21T10:22:32.459+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  14%|#3        | 68/498 [00:13<00:54,  7.94it/s]
+[2025-06-21T10:22:32.586+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  14%|#3        | 69/498 [00:13<00:54,  7.94it/s]
+[2025-06-21T10:22:32.709+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  14%|#4        | 70/498 [00:13<00:53,  8.00it/s]
+[2025-06-21T10:22:32.832+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  14%|#4        | 71/498 [00:14<00:53,  8.03it/s]
+[2025-06-21T10:22:32.956+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  14%|#4        | 72/498 [00:14<00:52,  8.04it/s]
+[2025-06-21T10:22:33.085+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  15%|#4        | 73/498 [00:14<00:53,  7.94it/s]
+[2025-06-21T10:22:33.216+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  15%|#4        | 74/498 [00:14<00:53,  7.86it/s]
+[2025-06-21T10:22:33.345+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  15%|#5        | 75/498 [00:14<00:54,  7.82it/s]
+[2025-06-21T10:22:33.475+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  15%|#5        | 76/498 [00:14<00:54,  7.78it/s]
+[2025-06-21T10:22:33.620+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  15%|#5        | 77/498 [00:14<00:56,  7.50it/s]
+[2025-06-21T10:22:33.811+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  16%|#5        | 78/498 [00:15<01:03,  6.63it/s]
+[2025-06-21T10:22:34.102+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  16%|#5        | 79/498 [00:15<01:20,  5.19it/s]
+[2025-06-21T10:22:34.228+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  16%|#6        | 80/498 [00:15<01:12,  5.79it/s]
+[2025-06-21T10:22:34.353+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  16%|#6        | 81/498 [00:15<01:06,  6.31it/s]
+[2025-06-21T10:22:34.483+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  16%|#6        | 82/498 [00:15<01:02,  6.67it/s]
+[2025-06-21T10:22:34.608+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  17%|#6        | 83/498 [00:15<00:59,  7.02it/s]
+[2025-06-21T10:22:34.731+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  17%|#6        | 84/498 [00:15<00:56,  7.32it/s]
+[2025-06-21T10:22:34.860+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  17%|#7        | 85/498 [00:16<00:55,  7.45it/s]
+[2025-06-21T10:22:34.990+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  17%|#7        | 86/498 [00:16<00:54,  7.51it/s]
+[2025-06-21T10:22:35.115+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  17%|#7        | 87/498 [00:16<00:53,  7.66it/s]
+[2025-06-21T10:22:35.243+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  18%|#7        | 88/498 [00:16<00:53,  7.71it/s]
+[2025-06-21T10:22:35.369+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  18%|#7        | 89/498 [00:16<00:52,  7.78it/s]
+[2025-06-21T10:22:35.501+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  18%|#8        | 90/498 [00:16<00:52,  7.70it/s]
+[2025-06-21T10:22:35.626+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  18%|#8        | 91/498 [00:16<00:52,  7.80it/s]
+[2025-06-21T10:22:35.777+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  18%|#8        | 92/498 [00:16<00:54,  7.40it/s]
+[2025-06-21T10:22:35.936+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  19%|#8        | 93/498 [00:17<00:57,  7.02it/s]
+[2025-06-21T10:22:36.117+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  19%|#8        | 94/498 [00:17<01:02,  6.50it/s]
+[2025-06-21T10:22:36.262+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  19%|#9        | 95/498 [00:17<01:00,  6.61it/s]
+[2025-06-21T10:22:36.408+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  19%|#9        | 96/498 [00:17<01:00,  6.68it/s]
+[2025-06-21T10:22:36.578+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  19%|#9        | 97/498 [00:17<01:02,  6.43it/s]
+[2025-06-21T10:22:36.738+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  20%|#9        | 98/498 [00:17<01:02,  6.38it/s]
+[2025-06-21T10:22:36.884+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  20%|#9        | 99/498 [00:18<01:01,  6.51it/s]
+[2025-06-21T10:22:37.010+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  20%|##        | 100/498 [00:18<00:57,  6.87it/s]
+[2025-06-21T10:22:37.137+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  20%|##        | 101/498 [00:18<00:55,  7.15it/s]
+[2025-06-21T10:22:37.264+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  20%|##        | 102/498 [00:18<00:53,  7.36it/s]
+[2025-06-21T10:22:37.389+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  21%|##        | 103/498 [00:18<00:52,  7.54it/s]
+[2025-06-21T10:22:37.517+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  21%|##        | 104/498 [00:18<00:51,  7.61it/s]
+[2025-06-21T10:22:37.644+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  21%|##1       | 105/498 [00:18<00:51,  7.69it/s]
+[2025-06-21T10:22:37.774+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  21%|##1       | 106/498 [00:18<00:50,  7.70it/s]
+[2025-06-21T10:22:37.900+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  21%|##1       | 107/498 [00:19<00:50,  7.77it/s]
+[2025-06-21T10:22:38.027+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  22%|##1       | 108/498 [00:19<00:50,  7.79it/s]
+[2025-06-21T10:22:38.155+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  22%|##1       | 109/498 [00:19<00:49,  7.81it/s]
+[2025-06-21T10:22:38.281+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  22%|##2       | 110/498 [00:19<00:49,  7.83it/s]
+[2025-06-21T10:22:38.407+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  22%|##2       | 111/498 [00:19<00:49,  7.88it/s]
+[2025-06-21T10:22:38.530+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  22%|##2       | 112/498 [00:19<00:48,  7.94it/s]
+[2025-06-21T10:22:38.654+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  23%|##2       | 113/498 [00:19<00:48,  7.98it/s]
+[2025-06-21T10:22:38.779+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  23%|##2       | 114/498 [00:19<00:48,  8.00it/s]
+[2025-06-21T10:22:38.902+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  23%|##3       | 115/498 [00:20<00:47,  8.03it/s]
+[2025-06-21T10:22:39.023+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  23%|##3       | 116/498 [00:20<00:47,  8.09it/s]
+[2025-06-21T10:22:39.145+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  23%|##3       | 117/498 [00:20<00:46,  8.12it/s]
+[2025-06-21T10:22:39.278+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  24%|##3       | 118/498 [00:20<00:47,  7.95it/s]
+[2025-06-21T10:22:39.409+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  24%|##3       | 119/498 [00:20<00:48,  7.84it/s]
+[2025-06-21T10:22:39.537+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  24%|##4       | 120/498 [00:20<00:48,  7.84it/s]
+[2025-06-21T10:22:39.664+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  24%|##4       | 121/498 [00:20<00:48,  7.84it/s]
+[2025-06-21T10:22:39.790+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  24%|##4       | 122/498 [00:20<00:47,  7.88it/s]
+[2025-06-21T10:22:39.913+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  25%|##4       | 123/498 [00:21<00:47,  7.96it/s]
+[2025-06-21T10:22:40.038+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  25%|##4       | 124/498 [00:21<00:46,  7.96it/s]
+[2025-06-21T10:22:40.164+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  25%|##5       | 125/498 [00:21<00:46,  7.96it/s]
+[2025-06-21T10:22:40.291+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  25%|##5       | 126/498 [00:21<00:46,  7.92it/s]
+[2025-06-21T10:22:40.420+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  26%|##5       | 127/498 [00:21<00:47,  7.88it/s]
+[2025-06-21T10:22:40.549+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  26%|##5       | 128/498 [00:21<00:47,  7.85it/s]
+[2025-06-21T10:22:40.674+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  26%|##5       | 129/498 [00:21<00:46,  7.89it/s]
+[2025-06-21T10:22:40.798+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  26%|##6       | 130/498 [00:22<00:46,  7.93it/s]
+[2025-06-21T10:22:40.922+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  26%|##6       | 131/498 [00:22<00:46,  7.97it/s]
+[2025-06-21T10:22:41.050+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  27%|##6       | 132/498 [00:22<00:46,  7.92it/s]
+[2025-06-21T10:22:41.179+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  27%|##6       | 133/498 [00:22<00:46,  7.88it/s]
+[2025-06-21T10:22:41.307+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  27%|##6       | 134/498 [00:22<00:46,  7.85it/s]
+[2025-06-21T10:22:41.435+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  27%|##7       | 135/498 [00:22<00:46,  7.84it/s]
+[2025-06-21T10:22:41.561+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  27%|##7       | 136/498 [00:22<00:45,  7.88it/s]
+[2025-06-21T10:22:41.690+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  28%|##7       | 137/498 [00:22<00:46,  7.84it/s]
+[2025-06-21T10:22:41.813+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  28%|##7       | 138/498 [00:23<00:45,  7.91it/s]
+[2025-06-21T10:22:41.937+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  28%|##7       | 139/498 [00:23<00:45,  7.97it/s]
+[2025-06-21T10:22:42.064+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  28%|##8       | 140/498 [00:23<00:45,  7.93it/s]
+[2025-06-21T10:22:42.188+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  28%|##8       | 141/498 [00:23<00:44,  7.97it/s]
+[2025-06-21T10:22:42.313+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  29%|##8       | 142/498 [00:23<00:44,  7.99it/s]
+[2025-06-21T10:22:42.437+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  29%|##8       | 143/498 [00:23<00:44,  8.01it/s]
+[2025-06-21T10:22:42.567+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  29%|##8       | 144/498 [00:23<00:44,  7.91it/s]
+[2025-06-21T10:22:42.691+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  29%|##9       | 145/498 [00:23<00:44,  7.95it/s]
+[2025-06-21T10:22:42.815+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  29%|##9       | 146/498 [00:24<00:44,  7.98it/s]
+[2025-06-21T10:22:42.939+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  30%|##9       | 147/498 [00:24<00:43,  8.02it/s]
+[2025-06-21T10:22:43.063+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  30%|##9       | 148/498 [00:24<00:43,  8.03it/s]
+[2025-06-21T10:22:43.193+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  30%|##9       | 149/498 [00:24<00:44,  7.93it/s]
+[2025-06-21T10:22:43.321+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  30%|###       | 150/498 [00:24<00:44,  7.90it/s]
+[2025-06-21T10:22:43.450+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  30%|###       | 151/498 [00:24<00:44,  7.84it/s]
+[2025-06-21T10:22:43.575+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  31%|###       | 152/498 [00:24<00:43,  7.90it/s]
+[2025-06-21T10:22:43.770+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  31%|###       | 153/498 [00:24<00:50,  6.80it/s]
+[2025-06-21T10:22:44.057+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  31%|###       | 154/498 [00:25<01:05,  5.29it/s]
+[2025-06-21T10:22:44.183+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  31%|###1      | 155/498 [00:25<00:58,  5.87it/s]
+[2025-06-21T10:22:44.308+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  31%|###1      | 156/498 [00:25<00:53,  6.38it/s]
+[2025-06-21T10:22:44.435+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  32%|###1      | 157/498 [00:25<00:50,  6.77it/s]
+[2025-06-21T10:22:44.563+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  32%|###1      | 158/498 [00:25<00:48,  7.05it/s]
+[2025-06-21T10:22:44.688+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  32%|###1      | 159/498 [00:25<00:46,  7.31it/s]
+[2025-06-21T10:22:44.813+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  32%|###2      | 160/498 [00:26<00:44,  7.51it/s]
+[2025-06-21T10:22:44.937+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  32%|###2      | 161/498 [00:26<00:44,  7.66it/s]
+[2025-06-21T10:22:45.066+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  33%|###2      | 162/498 [00:26<00:43,  7.68it/s]
+[2025-06-21T10:22:45.189+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  33%|###2      | 163/498 [00:26<00:42,  7.82it/s]
+[2025-06-21T10:22:45.313+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  33%|###2      | 164/498 [00:26<00:42,  7.88it/s]
+[2025-06-21T10:22:45.444+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  33%|###3      | 165/498 [00:26<00:42,  7.81it/s]
+[2025-06-21T10:22:45.567+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  33%|###3      | 166/498 [00:26<00:41,  7.92it/s]
+[2025-06-21T10:22:45.695+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  34%|###3      | 167/498 [00:26<00:42,  7.88it/s]
+[2025-06-21T10:22:45.818+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  34%|###3      | 168/498 [00:27<00:41,  7.95it/s]
+[2025-06-21T10:22:45.942+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  34%|###3      | 169/498 [00:27<00:41,  7.98it/s]
+[2025-06-21T10:22:46.086+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  34%|###4      | 170/498 [00:27<00:42,  7.64it/s]
+[2025-06-21T10:22:46.217+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  34%|###4      | 171/498 [00:27<00:42,  7.64it/s]
+[2025-06-21T10:22:46.342+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  35%|###4      | 172/498 [00:27<00:42,  7.74it/s]
+[2025-06-21T10:22:46.464+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  35%|###4      | 173/498 [00:27<00:41,  7.87it/s]
+[2025-06-21T10:22:46.617+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  35%|###4      | 174/498 [00:27<00:43,  7.43it/s]
+[2025-06-21T10:22:46.763+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  35%|###5      | 175/498 [00:27<00:44,  7.24it/s]
+[2025-06-21T10:22:46.900+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  35%|###5      | 176/498 [00:28<00:44,  7.26it/s]
+[2025-06-21T10:22:47.057+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  36%|###5      | 177/498 [00:28<00:46,  6.97it/s]
+[2025-06-21T10:22:47.183+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  36%|###5      | 178/498 [00:28<00:44,  7.24it/s]
+[2025-06-21T10:22:47.312+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  36%|###5      | 179/498 [00:28<00:43,  7.37it/s]
+[2025-06-21T10:22:47.442+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  36%|###6      | 180/498 [00:28<00:42,  7.47it/s]
+[2025-06-21T10:22:47.568+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  36%|###6      | 181/498 [00:28<00:41,  7.60it/s]
+[2025-06-21T10:22:47.695+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  37%|###6      | 182/498 [00:28<00:41,  7.68it/s]
+[2025-06-21T10:22:47.817+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  37%|###6      | 183/498 [00:29<00:40,  7.83it/s]
+[2025-06-21T10:22:47.942+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  37%|###6      | 184/498 [00:29<00:39,  7.88it/s]
+[2025-06-21T10:22:48.067+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  37%|###7      | 185/498 [00:29<00:39,  7.93it/s]
+[2025-06-21T10:22:48.197+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  37%|###7      | 186/498 [00:29<00:39,  7.85it/s]
+[2025-06-21T10:22:48.326+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  38%|###7      | 187/498 [00:29<00:39,  7.82it/s]
+[2025-06-21T10:22:48.452+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  38%|###7      | 188/498 [00:29<00:39,  7.85it/s]
+[2025-06-21T10:22:48.576+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  38%|###7      | 189/498 [00:29<00:39,  7.92it/s]
+[2025-06-21T10:22:48.698+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  38%|###8      | 190/498 [00:29<00:38,  8.01it/s]
+[2025-06-21T10:22:48.825+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  38%|###8      | 191/498 [00:30<00:38,  7.96it/s]
+[2025-06-21T10:22:48.950+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  39%|###8      | 192/498 [00:30<00:38,  7.97it/s]
+[2025-06-21T10:22:49.073+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  39%|###8      | 193/498 [00:30<00:38,  8.02it/s]
+[2025-06-21T10:22:49.195+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  39%|###8      | 194/498 [00:30<00:37,  8.06it/s]
+[2025-06-21T10:22:49.320+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  39%|###9      | 195/498 [00:30<00:37,  8.05it/s]
+[2025-06-21T10:22:49.453+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  39%|###9      | 196/498 [00:30<00:38,  7.88it/s]
+[2025-06-21T10:22:49.577+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  40%|###9      | 197/498 [00:30<00:37,  7.94it/s]
+[2025-06-21T10:22:49.707+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  40%|###9      | 198/498 [00:30<00:38,  7.86it/s]
+[2025-06-21T10:22:49.835+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  40%|###9      | 199/498 [00:31<00:38,  7.84it/s]
+[2025-06-21T10:22:49.957+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  40%|####      | 200/498 [00:31<00:37,  7.94it/s]
+[2025-06-21T10:22:50.087+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  40%|####      | 201/498 [00:31<00:37,  7.87it/s]
+[2025-06-21T10:22:50.246+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  41%|####      | 202/498 [00:31<00:40,  7.32it/s]
+[2025-06-21T10:22:50.372+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  41%|####      | 203/498 [00:31<00:39,  7.49it/s]
+[2025-06-21T10:22:50.543+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  41%|####      | 204/498 [00:31<00:42,  6.92it/s]
+[2025-06-21T10:22:50.664+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  41%|####1     | 205/498 [00:31<00:40,  7.26it/s]
+[2025-06-21T10:22:50.790+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  41%|####1     | 206/498 [00:31<00:39,  7.45it/s]
+[2025-06-21T10:22:50.914+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  42%|####1     | 207/498 [00:32<00:38,  7.64it/s]
+[2025-06-21T10:22:51.058+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  42%|####1     | 208/498 [00:32<00:39,  7.40it/s]
+[2025-06-21T10:22:51.190+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  42%|####1     | 209/498 [00:32<00:38,  7.46it/s]
+[2025-06-21T10:22:51.315+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  42%|####2     | 210/498 [00:32<00:37,  7.61it/s]
+[2025-06-21T10:22:51.444+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  42%|####2     | 211/498 [00:32<00:37,  7.66it/s]
+[2025-06-21T10:22:51.576+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  43%|####2     | 212/498 [00:32<00:37,  7.64it/s]
+[2025-06-21T10:22:51.746+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  43%|####2     | 213/498 [00:32<00:40,  7.01it/s]
+[2025-06-21T10:22:51.894+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  43%|####2     | 214/498 [00:33<00:40,  6.93it/s]
+[2025-06-21T10:22:52.019+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  43%|####3     | 215/498 [00:33<00:39,  7.21it/s]
+[2025-06-21T10:22:52.144+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  43%|####3     | 216/498 [00:33<00:37,  7.45it/s]
+[2025-06-21T10:22:52.269+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  44%|####3     | 217/498 [00:33<00:37,  7.59it/s]
+[2025-06-21T10:22:52.393+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  44%|####3     | 218/498 [00:33<00:36,  7.74it/s]
+[2025-06-21T10:22:52.515+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  44%|####3     | 219/498 [00:33<00:35,  7.86it/s]
+[2025-06-21T10:22:52.641+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  44%|####4     | 220/498 [00:33<00:35,  7.89it/s]
+[2025-06-21T10:22:52.763+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  44%|####4     | 221/498 [00:33<00:34,  7.98it/s]
+[2025-06-21T10:22:52.888+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  45%|####4     | 222/498 [00:34<00:34,  7.99it/s]
+[2025-06-21T10:22:53.011+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  45%|####4     | 223/498 [00:34<00:34,  8.03it/s]
+[2025-06-21T10:22:53.134+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  45%|####4     | 224/498 [00:34<00:34,  8.06it/s]
+[2025-06-21T10:22:53.260+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  45%|####5     | 225/498 [00:34<00:34,  8.02it/s]
+[2025-06-21T10:22:53.389+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  45%|####5     | 226/498 [00:34<00:34,  7.93it/s]
+[2025-06-21T10:22:53.521+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  46%|####5     | 227/498 [00:34<00:34,  7.83it/s]
+[2025-06-21T10:22:53.667+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  46%|####5     | 228/498 [00:34<00:35,  7.50it/s]
+[2025-06-21T10:22:53.924+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  46%|####5     | 229/498 [00:35<00:45,  5.86it/s]
+[2025-06-21T10:22:54.142+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  46%|####6     | 230/498 [00:35<00:49,  5.42it/s]
+[2025-06-21T10:22:54.268+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  46%|####6     | 231/498 [00:35<00:44,  5.99it/s]
+[2025-06-21T10:22:54.402+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  47%|####6     | 232/498 [00:35<00:41,  6.37it/s]
+[2025-06-21T10:22:54.526+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  47%|####6     | 233/498 [00:35<00:39,  6.79it/s]
+[2025-06-21T10:22:54.653+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  47%|####6     | 234/498 [00:35<00:37,  7.09it/s]
+[2025-06-21T10:22:54.777+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  47%|####7     | 235/498 [00:35<00:35,  7.36it/s]
+[2025-06-21T10:22:54.908+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  47%|####7     | 236/498 [00:36<00:35,  7.44it/s]
+[2025-06-21T10:22:55.061+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  48%|####7     | 237/498 [00:36<00:36,  7.14it/s]
+[2025-06-21T10:22:55.211+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  48%|####7     | 238/498 [00:36<00:37,  6.98it/s]
+[2025-06-21T10:22:55.363+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  48%|####7     | 239/498 [00:36<00:37,  6.87it/s]
+[2025-06-21T10:22:55.515+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  48%|####8     | 240/498 [00:36<00:38,  6.77it/s]
+[2025-06-21T10:22:55.662+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  48%|####8     | 241/498 [00:36<00:37,  6.78it/s]
+[2025-06-21T10:22:55.812+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  49%|####8     | 242/498 [00:37<00:37,  6.75it/s]
+[2025-06-21T10:22:55.961+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  49%|####8     | 243/498 [00:37<00:37,  6.74it/s]
+[2025-06-21T10:22:56.120+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  49%|####8     | 244/498 [00:37<00:38,  6.59it/s]
+[2025-06-21T10:22:56.271+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  49%|####9     | 245/498 [00:37<00:38,  6.60it/s]
+[2025-06-21T10:22:56.419+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  49%|####9     | 246/498 [00:37<00:37,  6.65it/s]
+[2025-06-21T10:22:56.598+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  50%|####9     | 247/498 [00:37<00:39,  6.30it/s]
+[2025-06-21T10:22:56.757+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  50%|####9     | 248/498 [00:37<00:39,  6.29it/s]
+[2025-06-21T10:22:56.917+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  50%|#####     | 249/498 [00:38<00:39,  6.28it/s]
+[2025-06-21T10:22:57.067+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  50%|#####     | 250/498 [00:38<00:38,  6.39it/s]
+[2025-06-21T10:22:57.218+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  50%|#####     | 251/498 [00:38<00:38,  6.45it/s]
+[2025-06-21T10:22:57.372+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  51%|#####     | 252/498 [00:38<00:38,  6.47it/s]
+[2025-06-21T10:22:57.521+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  51%|#####     | 253/498 [00:38<00:37,  6.54it/s]
+[2025-06-21T10:22:57.676+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  51%|#####1    | 254/498 [00:38<00:37,  6.52it/s]
+[2025-06-21T10:22:57.831+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  51%|#####1    | 255/498 [00:39<00:37,  6.49it/s]
+[2025-06-21T10:22:57.981+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  51%|#####1    | 256/498 [00:39<00:37,  6.54it/s]
+[2025-06-21T10:22:58.132+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  52%|#####1    | 257/498 [00:39<00:36,  6.57it/s]
+[2025-06-21T10:22:58.291+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  52%|#####1    | 258/498 [00:39<00:37,  6.48it/s]
+[2025-06-21T10:22:58.445+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  52%|#####2    | 259/498 [00:39<00:36,  6.49it/s]
+[2025-06-21T10:22:58.596+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  52%|#####2    | 260/498 [00:39<00:36,  6.53it/s]
+[2025-06-21T10:22:58.747+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  52%|#####2    | 261/498 [00:39<00:36,  6.55it/s]
+[2025-06-21T10:22:58.900+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  53%|#####2    | 262/498 [00:40<00:36,  6.55it/s]
+[2025-06-21T10:22:59.049+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  53%|#####2    | 263/498 [00:40<00:35,  6.59it/s]
+[2025-06-21T10:22:59.195+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  53%|#####3    | 264/498 [00:40<00:35,  6.67it/s]
+[2025-06-21T10:22:59.345+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  53%|#####3    | 265/498 [00:40<00:34,  6.68it/s]
+[2025-06-21T10:22:59.505+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  53%|#####3    | 266/498 [00:40<00:35,  6.54it/s]
+[2025-06-21T10:22:59.652+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  54%|#####3    | 267/498 [00:40<00:34,  6.61it/s]
+[2025-06-21T10:22:59.808+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  54%|#####3    | 268/498 [00:41<00:35,  6.55it/s]
+[2025-06-21T10:23:00.006+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  54%|#####4    | 269/498 [00:41<00:38,  6.02it/s]
+[2025-06-21T10:23:00.547+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  54%|#####4    | 270/498 [00:41<01:03,  3.59it/s]
+[2025-06-21T10:23:01.121+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  54%|#####4    | 271/498 [00:42<01:23,  2.72it/s]
+[2025-06-21T10:23:01.427+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  55%|#####4    | 272/498 [00:42<01:18,  2.87it/s]
+[2025-06-21T10:23:01.633+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  55%|#####4    | 273/498 [00:42<01:08,  3.27it/s]
+[2025-06-21T10:23:01.813+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  55%|#####5    | 274/498 [00:43<01:00,  3.73it/s]
+[2025-06-21T10:23:01.977+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  55%|#####5    | 275/498 [00:43<00:52,  4.22it/s]
+[2025-06-21T10:23:02.137+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  55%|#####5    | 276/498 [00:43<00:47,  4.68it/s]
+[2025-06-21T10:23:02.313+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  56%|#####5    | 277/498 [00:43<00:44,  4.93it/s]
+[2025-06-21T10:23:02.487+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  56%|#####5    | 278/498 [00:43<00:42,  5.16it/s]
+[2025-06-21T10:23:02.637+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  56%|#####6    | 279/498 [00:43<00:39,  5.53it/s]
+[2025-06-21T10:23:02.786+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  56%|#####6    | 280/498 [00:43<00:37,  5.84it/s]
+[2025-06-21T10:23:02.938+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  56%|#####6    | 281/498 [00:44<00:35,  6.04it/s]
+[2025-06-21T10:23:03.080+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  57%|#####6    | 282/498 [00:44<00:34,  6.31it/s]
+[2025-06-21T10:23:03.226+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  57%|#####6    | 283/498 [00:44<00:33,  6.46it/s]
+[2025-06-21T10:23:03.374+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  57%|#####7    | 284/498 [00:44<00:32,  6.54it/s]
+[2025-06-21T10:23:03.535+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  57%|#####7    | 285/498 [00:44<00:33,  6.44it/s]
+[2025-06-21T10:23:03.784+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  57%|#####7    | 286/498 [00:44<00:38,  5.45it/s]
+[2025-06-21T10:23:04.153+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  58%|#####7    | 287/498 [00:45<00:50,  4.18it/s]
+[2025-06-21T10:23:04.346+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  58%|#####7    | 288/498 [00:45<00:47,  4.44it/s]
+[2025-06-21T10:23:04.558+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  58%|#####8    | 289/498 [00:45<00:46,  4.52it/s]
+[2025-06-21T10:23:04.748+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  58%|#####8    | 290/498 [00:45<00:44,  4.72it/s]
+[2025-06-21T10:23:04.898+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  58%|#####8    | 291/498 [00:46<00:40,  5.17it/s]
+[2025-06-21T10:23:05.047+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  59%|#####8    | 292/498 [00:46<00:37,  5.55it/s]
+[2025-06-21T10:23:05.188+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  59%|#####8    | 293/498 [00:46<00:34,  5.94it/s]
+[2025-06-21T10:23:05.328+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  59%|#####9    | 294/498 [00:46<00:32,  6.27it/s]
+[2025-06-21T10:23:05.478+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  59%|#####9    | 295/498 [00:46<00:31,  6.37it/s]
+[2025-06-21T10:23:05.617+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  59%|#####9    | 296/498 [00:46<00:30,  6.60it/s]
+[2025-06-21T10:23:05.769+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  60%|#####9    | 297/498 [00:46<00:30,  6.59it/s]
+[2025-06-21T10:23:05.910+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  60%|#####9    | 298/498 [00:47<00:29,  6.73it/s]
+[2025-06-21T10:23:06.064+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  60%|######    | 299/498 [00:47<00:29,  6.66it/s]
+[2025-06-21T10:23:06.209+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  60%|######    | 300/498 [00:47<00:29,  6.73it/s]
+[2025-06-21T10:23:06.349+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  60%|######    | 301/498 [00:47<00:28,  6.86it/s]
+[2025-06-21T10:23:06.500+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  61%|######    | 302/498 [00:47<00:28,  6.79it/s]
+[2025-06-21T10:23:06.666+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  61%|######    | 303/498 [00:47<00:29,  6.53it/s]
+[2025-06-21T10:23:06.827+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  61%|######1   | 304/498 [00:48<00:30,  6.43it/s]
+[2025-06-21T10:23:06.982+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  61%|######1   | 305/498 [00:48<00:29,  6.44it/s]
+[2025-06-21T10:23:07.123+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  61%|######1   | 306/498 [00:48<00:29,  6.62it/s]
+[2025-06-21T10:23:07.264+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  62%|######1   | 307/498 [00:48<00:28,  6.76it/s]
+[2025-06-21T10:23:07.413+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  62%|######1   | 308/498 [00:48<00:28,  6.75it/s]
+[2025-06-21T10:23:07.570+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  62%|######2   | 309/498 [00:48<00:28,  6.63it/s]
+[2025-06-21T10:23:07.716+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  62%|######2   | 310/498 [00:48<00:28,  6.69it/s]
+[2025-06-21T10:23:07.871+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  62%|######2   | 311/498 [00:49<00:28,  6.62it/s]
+[2025-06-21T10:23:08.039+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  63%|######2   | 312/498 [00:49<00:29,  6.40it/s]
+[2025-06-21T10:23:08.193+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  63%|######2   | 313/498 [00:49<00:28,  6.42it/s]
+[2025-06-21T10:23:08.335+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  63%|######3   | 314/498 [00:49<00:27,  6.60it/s]
+[2025-06-21T10:23:08.462+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  63%|######3   | 315/498 [00:49<00:26,  6.94it/s]
+[2025-06-21T10:23:08.596+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  63%|######3   | 316/498 [00:49<00:25,  7.09it/s]
+[2025-06-21T10:23:08.723+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  64%|######3   | 317/498 [00:49<00:24,  7.31it/s]
+[2025-06-21T10:23:08.853+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  64%|######3   | 318/498 [00:50<00:24,  7.41it/s]
+[2025-06-21T10:23:08.981+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  64%|######4   | 319/498 [00:50<00:23,  7.53it/s]
+[2025-06-21T10:23:09.115+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  64%|######4   | 320/498 [00:50<00:23,  7.52it/s]
+[2025-06-21T10:23:09.242+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  64%|######4   | 321/498 [00:50<00:23,  7.62it/s]
+[2025-06-21T10:23:09.369+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  65%|######4   | 322/498 [00:50<00:22,  7.70it/s]
+[2025-06-21T10:23:09.502+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  65%|######4   | 323/498 [00:50<00:22,  7.64it/s]
+[2025-06-21T10:23:09.627+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  65%|######5   | 324/498 [00:50<00:22,  7.75it/s]
+[2025-06-21T10:23:09.750+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  65%|######5   | 325/498 [00:50<00:22,  7.85it/s]
+[2025-06-21T10:23:09.878+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  65%|######5   | 326/498 [00:51<00:21,  7.85it/s]
+[2025-06-21T10:23:10.003+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  66%|######5   | 327/498 [00:51<00:21,  7.88it/s]
+[2025-06-21T10:23:10.129+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  66%|######5   | 328/498 [00:51<00:21,  7.90it/s]
+[2025-06-21T10:23:10.253+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  66%|######6   | 329/498 [00:51<00:21,  7.95it/s]
+[2025-06-21T10:23:10.381+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  66%|######6   | 330/498 [00:51<00:21,  7.90it/s]
+[2025-06-21T10:23:10.507+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  66%|######6   | 331/498 [00:51<00:21,  7.91it/s]
+[2025-06-21T10:23:10.629+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  67%|######6   | 332/498 [00:51<00:20,  8.01it/s]
+[2025-06-21T10:23:10.754+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  67%|######6   | 333/498 [00:51<00:20,  8.00it/s]
+[2025-06-21T10:23:10.882+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  67%|######7   | 334/498 [00:52<00:20,  7.95it/s]
+[2025-06-21T10:23:11.020+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  67%|######7   | 335/498 [00:52<00:21,  7.73it/s]
+[2025-06-21T10:23:11.149+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  67%|######7   | 336/498 [00:52<00:20,  7.73it/s]
+[2025-06-21T10:23:11.276+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  68%|######7   | 337/498 [00:52<00:20,  7.77it/s]
+[2025-06-21T10:23:11.399+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  68%|######7   | 338/498 [00:52<00:20,  7.88it/s]
+[2025-06-21T10:23:11.531+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  68%|######8   | 339/498 [00:52<00:20,  7.79it/s]
+[2025-06-21T10:23:11.653+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  68%|######8   | 340/498 [00:52<00:19,  7.90it/s]
+[2025-06-21T10:23:11.776+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  68%|######8   | 341/498 [00:52<00:19,  7.97it/s]
+[2025-06-21T10:23:11.902+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  69%|######8   | 342/498 [00:53<00:19,  7.96it/s]
+[2025-06-21T10:23:12.028+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  69%|######8   | 343/498 [00:53<00:19,  7.95it/s]
+[2025-06-21T10:23:12.154+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  69%|######9   | 344/498 [00:53<00:19,  7.94it/s]
+[2025-06-21T10:23:12.277+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  69%|######9   | 345/498 [00:53<00:19,  7.99it/s]
+[2025-06-21T10:23:12.403+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  69%|######9   | 346/498 [00:53<00:19,  7.99it/s]
+[2025-06-21T10:23:12.528+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  70%|######9   | 347/498 [00:53<00:18,  7.98it/s]
+[2025-06-21T10:23:12.653+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  70%|######9   | 348/498 [00:53<00:18,  7.99it/s]
+[2025-06-21T10:23:12.777+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  70%|#######   | 349/498 [00:53<00:18,  8.02it/s]
+[2025-06-21T10:23:12.900+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  70%|#######   | 350/498 [00:54<00:18,  8.04it/s]
+[2025-06-21T10:23:13.025+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  70%|#######   | 351/498 [00:54<00:18,  8.04it/s]
+[2025-06-21T10:23:13.149+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  71%|#######   | 352/498 [00:54<00:18,  8.05it/s]
+[2025-06-21T10:23:13.277+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  71%|#######   | 353/498 [00:54<00:18,  7.98it/s]
+[2025-06-21T10:23:13.403+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  71%|#######1  | 354/498 [00:54<00:18,  7.95it/s]
+[2025-06-21T10:23:13.545+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  71%|#######1  | 355/498 [00:54<00:18,  7.66it/s]
+[2025-06-21T10:23:13.696+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  71%|#######1  | 356/498 [00:54<00:19,  7.32it/s]
+[2025-06-21T10:23:13.930+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  72%|#######1  | 357/498 [00:55<00:23,  6.03it/s]
+[2025-06-21T10:23:14.154+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  72%|#######1  | 358/498 [00:55<00:25,  5.45it/s]
+[2025-06-21T10:23:14.280+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  72%|#######2  | 359/498 [00:55<00:23,  6.02it/s]
+[2025-06-21T10:23:14.406+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  72%|#######2  | 360/498 [00:55<00:21,  6.49it/s]
+[2025-06-21T10:23:14.533+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  72%|#######2  | 361/498 [00:55<00:20,  6.85it/s]
+[2025-06-21T10:23:14.662+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  73%|#######2  | 362/498 [00:55<00:19,  7.11it/s]
+[2025-06-21T10:23:14.787+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  73%|#######2  | 363/498 [00:55<00:18,  7.35it/s]
+[2025-06-21T10:23:14.910+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  73%|#######3  | 364/498 [00:56<00:17,  7.56it/s]
+[2025-06-21T10:23:15.044+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  73%|#######3  | 365/498 [00:56<00:17,  7.53it/s]
+[2025-06-21T10:23:15.168+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  73%|#######3  | 366/498 [00:56<00:17,  7.68it/s]
+[2025-06-21T10:23:15.291+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  74%|#######3  | 367/498 [00:56<00:16,  7.82it/s]
+[2025-06-21T10:23:15.417+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  74%|#######3  | 368/498 [00:56<00:16,  7.84it/s]
+[2025-06-21T10:23:15.549+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  74%|#######4  | 369/498 [00:56<00:16,  7.76it/s]
+[2025-06-21T10:23:15.673+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  74%|#######4  | 370/498 [00:56<00:16,  7.86it/s]
+[2025-06-21T10:23:15.795+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  74%|#######4  | 371/498 [00:57<00:15,  7.95it/s]
+[2025-06-21T10:23:15.924+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  75%|#######4  | 372/498 [00:57<00:15,  7.90it/s]
+[2025-06-21T10:23:16.064+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  75%|#######4  | 373/498 [00:57<00:16,  7.66it/s]
+[2025-06-21T10:23:16.195+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  75%|#######5  | 374/498 [00:57<00:16,  7.65it/s]
+[2025-06-21T10:23:16.317+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  75%|#######5  | 375/498 [00:57<00:15,  7.80it/s]
+[2025-06-21T10:23:16.442+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  76%|#######5  | 376/498 [00:57<00:15,  7.87it/s]
+[2025-06-21T10:23:16.592+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  76%|#######5  | 377/498 [00:57<00:16,  7.45it/s]
+[2025-06-21T10:23:16.735+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  76%|#######5  | 378/498 [00:57<00:16,  7.32it/s]
+[2025-06-21T10:23:16.874+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  76%|#######6  | 379/498 [00:58<00:16,  7.28it/s]
+[2025-06-21T10:23:16.997+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  76%|#######6  | 380/498 [00:58<00:15,  7.52it/s]
+[2025-06-21T10:23:17.122+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  77%|#######6  | 381/498 [00:58<00:15,  7.65it/s]
+[2025-06-21T10:23:17.246+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  77%|#######6  | 382/498 [00:58<00:14,  7.76it/s]
+[2025-06-21T10:23:17.373+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  77%|#######6  | 383/498 [00:58<00:14,  7.80it/s]
+[2025-06-21T10:23:17.507+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  77%|#######7  | 384/498 [00:58<00:14,  7.70it/s]
+[2025-06-21T10:23:17.631+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  77%|#######7  | 385/498 [00:58<00:14,  7.80it/s]
+[2025-06-21T10:23:17.756+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  78%|#######7  | 386/498 [00:58<00:14,  7.86it/s]
+[2025-06-21T10:23:17.882+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  78%|#######7  | 387/498 [00:59<00:14,  7.89it/s]
+[2025-06-21T10:23:18.008+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  78%|#######7  | 388/498 [00:59<00:13,  7.91it/s]
+[2025-06-21T10:23:18.134+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  78%|#######8  | 389/498 [00:59<00:13,  7.92it/s]
+[2025-06-21T10:23:18.259+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  78%|#######8  | 390/498 [00:59<00:13,  7.94it/s]
+[2025-06-21T10:23:18.393+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  79%|#######8  | 391/498 [00:59<00:13,  7.79it/s]
+[2025-06-21T10:23:18.517+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  79%|#######8  | 392/498 [00:59<00:13,  7.87it/s]
+[2025-06-21T10:23:18.641+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  79%|#######8  | 393/498 [00:59<00:13,  7.93it/s]
+[2025-06-21T10:23:18.772+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  79%|#######9  | 394/498 [00:59<00:13,  7.83it/s]
+[2025-06-21T10:23:18.897+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  79%|#######9  | 395/498 [01:00<00:13,  7.88it/s]
+[2025-06-21T10:23:19.024+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  80%|#######9  | 396/498 [01:00<00:12,  7.88it/s]
+[2025-06-21T10:23:19.151+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  80%|#######9  | 397/498 [01:00<00:12,  7.88it/s]
+[2025-06-21T10:23:19.275+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  80%|#######9  | 398/498 [01:00<00:12,  7.94it/s]
+[2025-06-21T10:23:19.398+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  80%|########  | 399/498 [01:00<00:12,  8.00it/s]
+[2025-06-21T10:23:19.526+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  80%|########  | 400/498 [01:00<00:12,  7.94it/s]
+[2025-06-21T10:23:19.658+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  81%|########  | 401/498 [01:00<00:12,  7.82it/s]
+[2025-06-21T10:23:19.791+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  81%|########  | 402/498 [01:00<00:12,  7.73it/s]
+[2025-06-21T10:23:19.916+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  81%|########  | 403/498 [01:01<00:12,  7.80it/s]
+[2025-06-21T10:23:20.047+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  81%|########1 | 404/498 [01:01<00:12,  7.76it/s]
+[2025-06-21T10:23:20.175+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  81%|########1 | 405/498 [01:01<00:11,  7.77it/s]
+[2025-06-21T10:23:20.300+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  82%|########1 | 406/498 [01:01<00:11,  7.84it/s]
+[2025-06-21T10:23:20.425+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  82%|########1 | 407/498 [01:01<00:11,  7.89it/s]
+[2025-06-21T10:23:20.550+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  82%|########1 | 408/498 [01:01<00:11,  7.92it/s]
+[2025-06-21T10:23:20.672+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  82%|########2 | 409/498 [01:01<00:11,  8.00it/s]
+[2025-06-21T10:23:20.798+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  82%|########2 | 410/498 [01:02<00:11,  7.99it/s]
+[2025-06-21T10:23:20.922+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  83%|########2 | 411/498 [01:02<00:10,  8.01it/s]
+[2025-06-21T10:23:21.068+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  83%|########2 | 412/498 [01:02<00:11,  7.62it/s]
+[2025-06-21T10:23:21.198+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  83%|########2 | 413/498 [01:02<00:11,  7.65it/s]
+[2025-06-21T10:23:21.321+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  83%|########3 | 414/498 [01:02<00:10,  7.77it/s]
+[2025-06-21T10:23:21.452+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  83%|########3 | 415/498 [01:02<00:10,  7.74it/s]
+[2025-06-21T10:23:21.579+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  84%|########3 | 416/498 [01:02<00:10,  7.78it/s]
+[2025-06-21T10:23:21.702+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  84%|########3 | 417/498 [01:02<00:10,  7.87it/s]
+[2025-06-21T10:23:21.827+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  84%|########3 | 418/498 [01:03<00:10,  7.92it/s]
+[2025-06-21T10:23:21.955+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  84%|########4 | 419/498 [01:03<00:10,  7.89it/s]
+[2025-06-21T10:23:22.081+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  84%|########4 | 420/498 [01:03<00:09,  7.89it/s]
+[2025-06-21T10:23:22.209+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  85%|########4 | 421/498 [01:03<00:09,  7.87it/s]
+[2025-06-21T10:23:22.331+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  85%|########4 | 422/498 [01:03<00:09,  7.96it/s]
+[2025-06-21T10:23:22.459+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  85%|########4 | 423/498 [01:03<00:09,  7.91it/s]
+[2025-06-21T10:23:22.586+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  85%|########5 | 424/498 [01:03<00:09,  7.92it/s]
+[2025-06-21T10:23:22.711+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  85%|########5 | 425/498 [01:03<00:09,  7.93it/s]
+[2025-06-21T10:23:22.839+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  86%|########5 | 426/498 [01:04<00:09,  7.90it/s]
+[2025-06-21T10:23:22.963+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  86%|########5 | 427/498 [01:04<00:08,  7.94it/s]
+[2025-06-21T10:23:23.093+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  86%|########5 | 428/498 [01:04<00:08,  7.87it/s]
+[2025-06-21T10:23:23.221+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  86%|########6 | 429/498 [01:04<00:08,  7.86it/s]
+[2025-06-21T10:23:23.351+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  86%|########6 | 430/498 [01:04<00:08,  7.80it/s]
+[2025-06-21T10:23:23.488+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  87%|########6 | 431/498 [01:04<00:08,  7.65it/s]
+[2025-06-21T10:23:23.650+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  87%|########6 | 432/498 [01:04<00:09,  7.13it/s]
+[2025-06-21T10:23:23.911+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  87%|########6 | 433/498 [01:05<00:11,  5.67it/s]
+[2025-06-21T10:23:24.137+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  87%|########7 | 434/498 [01:05<00:12,  5.23it/s]
+[2025-06-21T10:23:24.264+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  87%|########7 | 435/498 [01:05<00:10,  5.82it/s]
+[2025-06-21T10:23:24.391+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  88%|########7 | 436/498 [01:05<00:09,  6.31it/s]
+[2025-06-21T10:23:24.516+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  88%|########7 | 437/498 [01:05<00:09,  6.74it/s]
+[2025-06-21T10:23:24.642+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  88%|########7 | 438/498 [01:05<00:08,  7.05it/s]
+[2025-06-21T10:23:24.765+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  88%|########8 | 439/498 [01:05<00:08,  7.34it/s]
+[2025-06-21T10:23:24.894+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  88%|########8 | 440/498 [01:06<00:07,  7.47it/s]
+[2025-06-21T10:23:25.026+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  89%|########8 | 441/498 [01:06<00:07,  7.49it/s]
+[2025-06-21T10:23:25.153+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  89%|########8 | 442/498 [01:06<00:07,  7.60it/s]
+[2025-06-21T10:23:25.278+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  89%|########8 | 443/498 [01:06<00:07,  7.71it/s]
+[2025-06-21T10:23:25.403+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  89%|########9 | 444/498 [01:06<00:06,  7.80it/s]
+[2025-06-21T10:23:25.534+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  89%|########9 | 445/498 [01:06<00:06,  7.75it/s]
+[2025-06-21T10:23:25.660+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  90%|########9 | 446/498 [01:06<00:06,  7.81it/s]
+[2025-06-21T10:23:25.784+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  90%|########9 | 447/498 [01:06<00:06,  7.88it/s]
+[2025-06-21T10:23:25.917+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  90%|########9 | 448/498 [01:07<00:06,  7.78it/s]
+[2025-06-21T10:23:26.055+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  90%|######### | 449/498 [01:07<00:06,  7.60it/s]
+[2025-06-21T10:23:26.187+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  90%|######### | 450/498 [01:07<00:06,  7.59it/s]
+[2025-06-21T10:23:26.314+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  91%|######### | 451/498 [01:07<00:06,  7.69it/s]
+[2025-06-21T10:23:26.441+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  91%|######### | 452/498 [01:07<00:05,  7.74it/s]
+[2025-06-21T10:23:26.589+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  91%|######### | 453/498 [01:07<00:06,  7.41it/s]
+[2025-06-21T10:23:26.734+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  91%|#########1| 454/498 [01:07<00:06,  7.24it/s]
+[2025-06-21T10:23:26.882+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  91%|#########1| 455/498 [01:08<00:06,  7.09it/s]
+[2025-06-21T10:23:27.004+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  92%|#########1| 456/498 [01:08<00:05,  7.39it/s]
+[2025-06-21T10:23:27.129+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  92%|#########1| 457/498 [01:08<00:05,  7.57it/s]
+[2025-06-21T10:23:27.255+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  92%|#########1| 458/498 [01:08<00:05,  7.68it/s]
+[2025-06-21T10:23:27.380+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  92%|#########2| 459/498 [01:08<00:05,  7.77it/s]
+[2025-06-21T10:23:27.513+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  92%|#########2| 460/498 [01:08<00:04,  7.69it/s]
+[2025-06-21T10:23:27.642+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  93%|#########2| 461/498 [01:08<00:04,  7.71it/s]
+[2025-06-21T10:23:27.769+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  93%|#########2| 462/498 [01:08<00:04,  7.75it/s]
+[2025-06-21T10:23:27.898+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  93%|#########2| 463/498 [01:09<00:04,  7.76it/s]
+[2025-06-21T10:23:28.020+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  93%|#########3| 464/498 [01:09<00:04,  7.87it/s]
+[2025-06-21T10:23:28.143+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  93%|#########3| 465/498 [01:09<00:04,  7.95it/s]
+[2025-06-21T10:23:28.270+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  94%|#########3| 466/498 [01:09<00:04,  7.94it/s]
+[2025-06-21T10:23:28.398+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  94%|#########3| 467/498 [01:09<00:03,  7.90it/s]
+[2025-06-21T10:23:28.520+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  94%|#########3| 468/498 [01:09<00:03,  7.98it/s]
+[2025-06-21T10:23:28.646+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  94%|#########4| 469/498 [01:09<00:03,  7.98it/s]
+[2025-06-21T10:23:28.775+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  94%|#########4| 470/498 [01:09<00:03,  7.90it/s]
+[2025-06-21T10:23:28.902+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  95%|#########4| 471/498 [01:10<00:03,  7.88it/s]
+[2025-06-21T10:23:29.030+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  95%|#########4| 472/498 [01:10<00:03,  7.87it/s]
+[2025-06-21T10:23:29.153+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  95%|#########4| 473/498 [01:10<00:03,  7.94it/s]
+[2025-06-21T10:23:29.278+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  95%|#########5| 474/498 [01:10<00:03,  7.97it/s]
+[2025-06-21T10:23:29.403+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  95%|#########5| 475/498 [01:10<00:02,  7.98it/s]
+[2025-06-21T10:23:29.528+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  96%|#########5| 476/498 [01:10<00:02,  7.97it/s]
+[2025-06-21T10:23:29.653+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  96%|#########5| 477/498 [01:10<00:02,  7.99it/s]
+[2025-06-21T10:23:29.777+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  96%|#########5| 478/498 [01:10<00:02,  8.01it/s]
+[2025-06-21T10:23:29.905+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  96%|#########6| 479/498 [01:11<00:02,  7.95it/s]
+[2025-06-21T10:23:30.028+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  96%|#########6| 480/498 [01:11<00:02,  8.00it/s]
+[2025-06-21T10:23:30.160+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  97%|#########6| 481/498 [01:11<00:02,  7.88it/s]
+[2025-06-21T10:23:30.290+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  97%|#########6| 482/498 [01:11<00:02,  7.82it/s]
+[2025-06-21T10:23:30.414+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  97%|#########6| 483/498 [01:11<00:01,  7.88it/s]
+[2025-06-21T10:23:30.541+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  97%|#########7| 484/498 [01:11<00:01,  7.89it/s]
+[2025-06-21T10:23:30.665+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  97%|#########7| 485/498 [01:11<00:01,  7.93it/s]
+[2025-06-21T10:23:30.807+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  98%|#########7| 486/498 [01:12<00:01,  7.65it/s]
+[2025-06-21T10:23:30.950+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  98%|#########7| 487/498 [01:12<00:01,  7.44it/s]
+[2025-06-21T10:23:31.073+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  98%|#########7| 488/498 [01:12<00:01,  7.62it/s]
+[2025-06-21T10:23:31.202+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  98%|#########8| 489/498 [01:12<00:01,  7.66it/s]
+[2025-06-21T10:23:31.324+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  98%|#########8| 490/498 [01:12<00:01,  7.82it/s]
+[2025-06-21T10:23:31.456+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  99%|#########8| 491/498 [01:12<00:00,  7.75it/s]
+[2025-06-21T10:23:31.582+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  99%|#########8| 492/498 [01:12<00:00,  7.81it/s]
+[2025-06-21T10:23:31.709+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  99%|#########8| 493/498 [01:12<00:00,  7.83it/s]
+[2025-06-21T10:23:31.834+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  99%|#########9| 494/498 [01:13<00:00,  7.87it/s]
+[2025-06-21T10:23:31.960+0000] {logging_mixin.py:149} WARNING - Permutation explainer:  99%|#########9| 495/498 [01:13<00:00,  7.89it/s]
+[2025-06-21T10:23:32.088+0000] {logging_mixin.py:149} WARNING - Permutation explainer: 100%|#########9| 496/498 [01:13<00:00,  7.88it/s]
+[2025-06-21T10:23:32.214+0000] {logging_mixin.py:149} WARNING - Permutation explainer: 100%|#########9| 497/498 [01:13<00:00,  7.88it/s]
+[2025-06-21T10:23:32.337+0000] {logging_mixin.py:149} WARNING - Permutation explainer: 100%|##########| 498/498 [01:13<00:00,  7.96it/s]
+[2025-06-21T10:23:32.459+0000] {logging_mixin.py:149} WARNING - Permutation explainer: 499it [01:13,  8.02it/s]                         
+[2025-06-21T10:23:32.460+0000] {logging_mixin.py:149} WARNING - Permutation explainer: 499it [01:13,  6.24it/s]
+[2025-06-21T10:23:32.487+0000] {logging_mixin.py:149} INFO - [INFO] Running KS drift test...
+[2025-06-21T10:23:32.640+0000] {logging_mixin.py:149} INFO - [METRICS] {'timestamp': '2025-06-21T10:22:18.784369', 'execution_date': '2024-06-01', 'model_type': 'xgboost', 'f1_score': 0.5725, 'accuracy': 0.7811, 'support': 498, 'shap_Credit_History_Age': 0.0479, 'shap_Num_Fin_Pdts': 0.0309, 'shap_EMI_to_Salary': 0.0286, 'shap_Debt_to_Salary': 0.0534, 'shap_Repayment_Ability': 0.016, 'shap_Loans_per_Credit_Item': 0.0107, 'shap_Loan_Extent': 0.0322, 'shap_Outstanding_Debt': 0.0924, 'shap_Interest_Rate': 0.0684, 'shap_Delay_from_due_date': 0.0431, 'shap_Changed_Credit_Limit': 0.0517, 'shap_click_1m': 0.0144, 'shap_click_2m': 0.0188, 'shap_click_3m': 0.0127, 'shap_click_4m': 0.0131, 'shap_click_5m': 0.0081, 'shap_click_6m': 0.0079, 'ks_Credit_History_Age': 0.0725, 'ks_Num_Fin_Pdts': 0.0217, 'ks_EMI_to_Salary': 0.0426, 'ks_Debt_to_Salary': 0.0595, 'ks_Repayment_Ability': 0.0609, 'ks_Loans_per_Credit_Item': 0.0418, 'ks_Loan_Extent': 0.0299, 'ks_Outstanding_Debt': 0.0377, 'ks_Interest_Rate': 0.0303, 'ks_Delay_from_due_date': 0.0412, 'ks_Changed_Credit_Limit': 0.0521, 'ks_click_1m': 0.0388, 'ks_click_2m': 0.0401, 'ks_click_3m': 0.0432, 'ks_click_4m': 0.0323, 'ks_click_5m': 0.037, 'ks_click_6m': 0.0339}
+[2025-06-21T10:23:32.848+0000] {logging_mixin.py:149} WARNING - 2025/06/21 10:23:32 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-06-21T10:23:36.382+0000] {logging_mixin.py:149} INFO - [INFO] Monitoring log updated at: /opt/airflow/datamart/gold/monitoring_log.parquet
+[2025-06-21T10:23:36.423+0000] {logging_mixin.py:149} INFO - [INFO] Alert log updated at: /opt/airflow/datamart/gold/monitoring_alerts.parquet
+[2025-06-21T10:23:36.427+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-06-21T10:23:36.446+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=xgboost_monitor, execution_date=20240601T000000, start_date=20250621T102217, end_date=20250621T102336
+[2025-06-21T10:23:36.533+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T10:23:36.582+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

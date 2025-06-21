@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  jupyter:
+    image: jupyter/scipy-notebook:latest  # You can also use jupyter/base-notebook
+    container_name: jupyter_test_env
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app                           # Mounts entire repo (scripts, notebooks, etc.)
+      - ./datamart:/app/datamart         # Shared data directory (same as Airflow)
+      - ./mlruns:/app/mlruns             # Optional: MLflow artifacts
+    working_dir: /app
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYTHONUNBUFFERED=1
+    command: >
+      start-notebook.sh --NotebookApp.token='' --NotebookApp.allow_origin='*' --NotebookApp.notebook_dir=/app

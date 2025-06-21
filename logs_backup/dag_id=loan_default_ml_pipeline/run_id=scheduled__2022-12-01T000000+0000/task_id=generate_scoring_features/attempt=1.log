@@ -1,0 +1,19 @@
+[2025-06-21T09:44:01.007+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:44:01.025+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.generate_scoring_features scheduled__2022-12-01T00:00:00+00:00 [queued]>
+[2025-06-21T09:44:01.041+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: loan_default_ml_pipeline.generate_scoring_features scheduled__2022-12-01T00:00:00+00:00 [queued]>
+[2025-06-21T09:44:01.042+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2025-06-21T09:44:01.072+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): generate_scoring_features> on 2022-12-01 00:00:00+00:00
+[2025-06-21T09:44:01.091+0000] {standard_task_runner.py:57} INFO - Started process 368 to run task
+[2025-06-21T09:44:01.100+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'loan_default_ml_pipeline', 'generate_scoring_features', 'scheduled__2022-12-01T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmpjlcurjuc']
+[2025-06-21T09:44:01.103+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask generate_scoring_features
+[2025-06-21T09:44:01.130+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:44:01.188+0000] {task_command.py:410} INFO - Running <TaskInstance: loan_default_ml_pipeline.generate_scoring_features scheduled__2022-12-01T00:00:00+00:00 [running]> on host dadfc5c3a85b
+[2025-06-21T09:44:01.202+0000] {logging_mixin.py:149} WARNING - /home/airflow/.local/lib/python3.7/site-packages/airflow/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-06-21T09:44:03.522+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ml_team' AIRFLOW_CTX_DAG_ID='loan_default_ml_pipeline' AIRFLOW_CTX_TASK_ID='generate_scoring_features' AIRFLOW_CTX_EXECUTION_DATE='2022-12-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-12-01T00:00:00+00:00'
+[2025-06-21T09:44:03.525+0000] {logging_mixin.py:149} INFO - [INFO] Generating scoring features for 2022-12-01
+[2025-06-21T09:44:03.529+0000] {logging_mixin.py:149} INFO - [ERROR] Missing customer_fin file: /opt/airflow/datamart/gold/feature_store/cust_fin_risk/gold_ft_store_cust_fin_risk_2022_12_01.parquet
+[2025-06-21T09:44:03.529+0000] {logging_mixin.py:149} INFO - [ERROR] Feature generation failed.
+[2025-06-21T09:44:03.530+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-06-21T09:44:03.540+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=loan_default_ml_pipeline, task_id=generate_scoring_features, execution_date=20221201T000000, start_date=20250621T094401, end_date=20250621T094403
+[2025-06-21T09:44:03.604+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-06-21T09:44:03.655+0000] {taskinstance.py:2651} INFO - 2 downstream tasks scheduled from follow-on schedule check

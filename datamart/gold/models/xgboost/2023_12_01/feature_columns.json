@@ -1,0 +1,21 @@
+{
+  "features": [
+    "Credit_History_Age",
+    "Num_Fin_Pdts",
+    "EMI_to_Salary",
+    "Debt_to_Salary",
+    "Repayment_Ability",
+    "Loans_per_Credit_Item",
+    "Loan_Extent",
+    "Outstanding_Debt",
+    "Interest_Rate",
+    "Delay_from_due_date",
+    "Changed_Credit_Limit",
+    "click_1m",
+    "click_2m",
+    "click_3m",
+    "click_4m",
+    "click_5m",
+    "click_6m"
+  ]
+}
